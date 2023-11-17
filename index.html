@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form">
+        <h1>Registration Form</h1>
+        <form action="#">
+            <input type="text" name="name" id="name" placeholder="Full Name" required> <br>
+            <input type="email" name="email" id="email" placeholder="example@mail.com" required> <br>
+            <input type="password" name="password" id="password" placeholder="Hard Password" minlength="8" required> <br>
+            <input type="date" name="dob" id="dob" required>
+            <input type="checkbox" name="acceptTerms" id="acceptTerms"  checked="true" required>
+            <label for="acceptTerms">Accept Terms &amp; Conditions</label> <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+
+    <div class="view">
+        <h1>EntryList</h1>
+        <div id="main">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Dob</th>
+                    <th>Accepted terms?</th>
+                </tr>
+            </table>
+        </div>
+        <div id="content">
+            <table>
+                
+            </table>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
