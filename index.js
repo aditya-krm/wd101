@@ -5,7 +5,7 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const dobInput = document.getElementById("dob");
 const termsCheckbox = document.getElementById("acceptTerms");
-const registrationTable = document.querySelector("#content table");
+const registrationTableBody = document.querySelector("#main tbody");
 
 // Data Management
 let registrations = [];
@@ -64,31 +64,20 @@ function handleRegistration(event) {
 
 // Update the registration table
 function updateRegistrationTable() {
-  registrationTable.innerHTML = `
-    <thead>
+  registrationTableBody.innerHTML = `
+    ${registrations
+      .map(
+        (registration) => `
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Date of Birth</th>
-        <th>Agreed to Terms</th>
+        <td>${registration.name}</td>
+        <td>${registration.email}</td>
+        <td>${registration.password}</td>
+        <td>${registration.dob}</td>
+        <td>${registration.agreedToTerms ? "Yes" : "No"}</td>
       </tr>
-    </thead>
-    <tbody>
-      ${registrations
-        .map(
-          (registration) => `
-        <tr>
-          <td>${registration.name}</td>
-          <td>${registration.email}</td>
-          <td>${registration.password}</td>
-          <td>${registration.dob}</td>
-          <td>${registration.agreedToTerms ? "Yes" : "No"}</td>
-        </tr>
-      `
-        )
-        .join("")}
-    </tbody>
+    `
+      )
+      .join("")}
   `;
 }
 
