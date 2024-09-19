@@ -64,21 +64,19 @@ function handleRegistration(event) {
 
 // Update the registration table
 function updateRegistrationTable() {
-  registrationTableBody.innerHTML = `
-    ${registrations
-      .map(
-        (registration) => `
+  registrationTableBody.innerHTML = registrations
+    .map(
+      (registration) => `
       <tr>
         <td>${registration.name}</td>
         <td>${registration.email}</td>
         <td>${registration.password}</td>
         <td>${registration.dob}</td>
-        <td>${registration.agreedToTerms ? "Yes" : "No"}</td>
+        <td>${registration.agreedToTerms}</td>
       </tr>
     `
-      )
-      .join("")}
-  `;
+    )
+    .join("");
 }
 
 // Initialize
